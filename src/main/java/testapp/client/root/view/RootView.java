@@ -78,22 +78,10 @@ public class RootView extends ReverseCompositeView<IRootView.IRootPresenter> imp
         window.setPixelSize(500, 300);
         window.setModal(true);
         window.setBlinkModal(true);
-        window.setHeadingText("Hello Window");
+        window.setHeadingText("Login");
         window.setClosable(false);
 
-        TabPanel panel = new TabPanel();
-        panel.setBorders(false);
-
-        Label label1 = new Label("Hello...");
-
-        Label label2 = new Label("World...");
-
-        panel.add(label1, new TabItemConfig("Hello World 1"));
-        panel.add(label2, new TabItemConfig("Hello World 2"));
-
-        window.add(panel);
-
-        TextButton b = new TextButton("Close");
+        TextButton b = new TextButton("Login");
         b.addSelectHandler(new SelectEvent.SelectHandler() {
 
             @Override
