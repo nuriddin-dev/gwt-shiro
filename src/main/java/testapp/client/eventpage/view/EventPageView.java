@@ -72,11 +72,6 @@ public class EventPageView extends ReverseCompositeView<IEventPageView.IEventPag
         listStore.addAll(events);
     }
 
-    @Override
-    public void downloadPdf() {
-
-    }
-
     @UiHandler("exportPdf")
     public void onClickExportPdf(SelectEvent event) {
         String url = GWT.getModuleBaseURL() + "downloadService?report=event/report1&type=pdf";

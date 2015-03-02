@@ -38,9 +38,5 @@ public class EventPagePresenter extends LazyPresenter<IEventPageView, EventPageE
         });
     }
 
-    public void onDownloadPdf(){
-
-    }
-
 
 }

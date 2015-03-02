@@ -10,8 +10,6 @@ public interface IEventPageView extends INamedView, LazyView {
 
     public void addEvents(List<EventDTO> events);
 
-    public void downloadPdf();
-
 	public interface IEventPagePresenter {
 
 	}
