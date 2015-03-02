@@ -11,4 +11,8 @@ public interface IRootView extends IsWidget {
 
     void openFrame(INamedView frame);
 
+    void login();
+
+    void logout();
+
 }

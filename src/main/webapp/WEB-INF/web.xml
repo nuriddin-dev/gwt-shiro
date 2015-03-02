@@ -18,8 +18,16 @@
         <servlet-name>testapp.TestApp DownloadService</servlet-name>
         <servlet-class>testapp.server.service.DownloadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>testapp.TestApp AuthService</servlet-name>
+        <servlet-class>testapp.server.service.AuthServiceImpl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>testapp.TestApp DownloadService</servlet-name>
         <url-pattern>/testapp/downloadService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>testapp.TestApp AuthService</servlet-name>
+        <url-pattern>/testapp/authservice</url-pattern>
     </servlet-mapping>
 </web-app>

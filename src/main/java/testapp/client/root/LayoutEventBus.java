@@ -26,6 +26,9 @@ public interface LayoutEventBus extends EventBus {
     @Event(handlers = RootPresenter.class)
     void openFrame(INamedView frame);
 
+    @Event(handlers = RootPresenter.class)
+    void login();
+
     @Event(forwardToModules = Page1Module.class)
     void goToPage1();
 
