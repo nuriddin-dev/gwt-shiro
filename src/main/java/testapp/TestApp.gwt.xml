@@ -1,0 +1,27 @@
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="testapp">
+
+    <!-- Inherit the core Web Toolkit stuff.                  -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <inherits name='com.mvp4g.Mvp4gModule'/>
+
+    <inherits name='com.sencha.gxt.ui.GXT'/>
+
+    <stylesheet src="reset.css"/>
+
+    <inherits name='com.sencha.gxt.theme.neptune.Theme'/>
+
+    <!--<source path="shared"/>-->
+
+    <!-- Specify the app entry point class.                   -->
+    <entry-point class='testapp.client.root.Application'/>
+
+    <!--ошибка темы neptune-->
+    <replace-with class="com.sencha.gxt.theme.neptune.client.base.menu.Css3MenuItemAppearance">
+        <when-type-is class="com.sencha.gxt.widget.core.client.menu.Item.ItemAppearance"/>
+    </replace-with>
+
+
+</module>

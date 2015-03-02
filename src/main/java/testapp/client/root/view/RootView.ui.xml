@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+             xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container">
+    <!--<g:HTMLPanel styleName="root">
+        <g:Widget ui:field="header" />
+        <g:Widget ui:field="menu" />
+        <g:SimplePanel ui:field="body" styleName="body" />
+        <g:Widget ui:field="footer" />
+    </g:HTMLPanel>-->
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData"
+             field="northData"/>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData"/>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData"
+             field="southData"/>
+    <container:Viewport>
+        <container:BorderLayoutContainer>
+            <container:north layoutData="{northData}">
+                <container:VerticalLayoutContainer>
+                    <g:Widget ui:field="header"/>
+                    <g:Widget ui:field="menu"/>
+                </container:VerticalLayoutContainer>
+            </container:north>
+            <container:center>
+                <gxt:TabPanel ui:field="tabPanel"></gxt:TabPanel>
+            </container:center>
+            <container:south layoutData="{southData}">
+                <g:Widget ui:field="footer"/>
+            </container:south>
+        </container:BorderLayoutContainer>
+    </container:Viewport>
+</ui:UiBinder> 
