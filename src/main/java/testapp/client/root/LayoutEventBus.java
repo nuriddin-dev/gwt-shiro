@@ -9,6 +9,7 @@ import com.mvp4g.client.annotation.module.ChildModules;
 import com.mvp4g.client.event.EventBus;
 import testapp.client.common.presenter.interfaces.INamedView;
 import testapp.client.eventpage.EventPageModule;
+import testapp.client.loginpage.LoginPageModule;
 import testapp.client.page1.Page1Module;
 import testapp.client.page2.Page2Module;
 import testapp.client.root.presenter.*;
@@ -41,4 +42,7 @@ public interface LayoutEventBus extends EventBus {
 
     @Event(forwardToModules = EventPageModule.class)
     void goToEventPage();
+
+    @Event(forwardToModules = LoginPageModule.class)
+    void goToLoginPage();
 }

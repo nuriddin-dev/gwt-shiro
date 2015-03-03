@@ -4,6 +4,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.LazyPresenter;
+import com.sencha.gxt.widget.core.client.box.MessageBox;
+import testapp.client.exceptions.CustomException;
 import testapp.client.loginpage.LoginPageEventBus;
 import testapp.client.loginpage.presenter.interfaces.ILoginPageView;
 import testapp.client.loginpage.view.LoginPageView;
@@ -25,7 +27,11 @@ public class LoginPagePresenter extends LazyPresenter<ILoginPageView, LoginPageE
         service.login(userName, password, rememberMe, new AsyncCallback<Boolean>() {
             @Override
             public void onFailure(Throwable throwable) {
-
+                if (throwable instanceof CustomException) {
+                    String message = throwable.getMessage();
+                    MessageBox m = new MessageBox(message);
+                    m.show();
+                }
             }
 
             @Override
