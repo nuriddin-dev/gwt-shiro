@@ -1,4 +1,4 @@
-package testapp.client.root;
+package testapp.client.app;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.shared.GWT;

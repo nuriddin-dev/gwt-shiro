@@ -1,5 +1,6 @@
 package testapp.client.root;
 
+import com.google.gwt.user.client.ui.IsWidget;
 import com.mvp4g.client.annotation.Event;
 import com.mvp4g.client.annotation.Events;
 import com.mvp4g.client.annotation.Start;
@@ -12,12 +13,18 @@ import testapp.client.page1.Page1Module;
 import testapp.client.page2.Page2Module;
 import testapp.client.root.presenter.*;
 
-@Events(startPresenter = RootPresenter.class)
+@Events(startPresenter = RootPresenter.class, module = RootModule.class)
 @ChildModules({
         @ChildModule(moduleClass = Page1Module.class, autoDisplay = false),
         @ChildModule(moduleClass = Page2Module.class, autoDisplay = false),
         @ChildModule(moduleClass = EventPageModule.class, autoDisplay = false)})
 public interface LayoutEventBus extends EventBus {
+
+    @Event(handlers = RootPresenter.class)
+    void goToHomePage();
+
+    @Event(forwardToParent = true)
+    void changeViewPortContent(IsWidget content);
 
     @Start
     @Event(bind = {HeaderPresenter.class, MenuPresenter.class, FooterPresenter.class}, handlers = RootPresenter.class)
@@ -25,9 +32,6 @@ public interface LayoutEventBus extends EventBus {
 
     @Event(handlers = RootPresenter.class)
     void openFrame(INamedView frame);
-
-    @Event(handlers = RootPresenter.class)
-    void login();
 
     @Event(forwardToModules = Page1Module.class)
     void goToPage1();

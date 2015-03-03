@@ -16,7 +16,7 @@
     <!--<source path="shared"/>-->
 
     <!-- Specify the app entry point class.                   -->
-    <entry-point class='testapp.client.root.Application'/>
+    <entry-point class='testapp.client.app.Application'/>
 
     <!--ошибка темы neptune-->
     <replace-with class="com.sencha.gxt.theme.neptune.client.base.menu.Css3MenuItemAppearance">
