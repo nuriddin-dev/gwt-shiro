@@ -1,6 +1,7 @@
 package testapp.client.app.presenter;
 
 import com.google.gwt.user.client.Command;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.inject.Inject;
 import com.mvp4g.client.Mvp4gLoader;
@@ -19,7 +20,20 @@ public class AppPresenter extends BasePresenter<IAppView, AppEventBus> implement
     AuthServiceAsync authService;
 
     public void onStart() {
-        eventBus.goToHomePage();
+        authService.isLoggedIn(new AsyncCallback<Boolean>() {
+            @Override
+            public void onFailure(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onSuccess(Boolean loggedIn) {
+                if (loggedIn)
+                    eventBus.goToHomePage();
+                else
+                    eventBus.goToLoginPage();
+            }
+        });
     }
 
     public void onChangeViewPortContent(IsWidget content) {

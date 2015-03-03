@@ -12,7 +12,7 @@ public class AuthServiceImpl extends RemoteServiceServlet implements AuthService
 
     @Override
     public boolean login(String userName, String password, boolean rememberMe) {
-        return false;
+        return true;
     }
 
     @Override

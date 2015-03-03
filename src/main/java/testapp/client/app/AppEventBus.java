@@ -8,10 +8,12 @@ import com.mvp4g.client.annotation.module.ChildModule;
 import com.mvp4g.client.annotation.module.ChildModules;
 import com.mvp4g.client.event.EventBus;
 import testapp.client.app.presenter.AppPresenter;
+import testapp.client.loginpage.LoginPageModule;
 import testapp.client.root.RootModule;
 
 @Events(startPresenter = AppPresenter.class)
-@ChildModules(@ChildModule(moduleClass = RootModule.class, autoDisplay = false))
+@ChildModules({@ChildModule(moduleClass = RootModule.class, autoDisplay = false),
+        @ChildModule(moduleClass = LoginPageModule.class, autoDisplay = false)})
 public interface AppEventBus extends EventBus {
 
     @Start
@@ -21,7 +23,8 @@ public interface AppEventBus extends EventBus {
     @Event(handlers = AppPresenter.class)
     void changeViewPortContent(IsWidget content);
 
-    //void goToLoginPage();
+    @Event(forwardToModules = LoginPageModule.class)
+    void goToLoginPage();
 
     @Event(forwardToModules = RootModule.class)
     void goToHomePage();

@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+             xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+             xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
+             xmlns:menu="urn:import:com.sencha.gxt.widget.core.client.menu"
+             xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+             xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+             xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <!--<container:CenterLayoutContainer>
+        <gxt:ContentPanel headingText="Login" bodyStyle="padding: 6px" width="200">
+
+        </gxt:ContentPanel>
+    </container:CenterLayoutContainer>-->
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+             field="verticalLayoutData">
+        <ui:attributes width="1" height="-1"/>
+    </ui:with>
+
+    <container:CenterLayoutContainer>
+        <gxt:FramedPanel headingText="Login" bodyStyle="background: none; padding: 15px">
+            <container:VerticalLayoutContainer>
+                <container:child layoutData="{verticalLayoutData}">
+                    <form:FieldLabel text="Login">
+                        <form:widget>
+                            <form:TextField ui:field="loginField" allowBlank="false"/>
+                        </form:widget>
+                    </form:FieldLabel>
+                </container:child>
+                <container:child layoutData="{verticalLayoutData}">
+                    <form:FieldLabel text="Password">
+                        <form:widget>
+                            <form:PasswordField ui:field="passwordField" allowBlank="false"/>
+                        </form:widget>
+                    </form:FieldLabel>
+                </container:child>
+                <container:child>
+                    <form:FieldLabel text="Remember me">
+                        <form:widget>
+                            <g:HorizontalPanel>
+                                <form:CheckBox ui:field="rememberMeField"/>
+                            </g:HorizontalPanel>
+                        </form:widget>
+                    </form:FieldLabel>
+                </container:child>
+            </container:VerticalLayoutContainer>
+            <gxt:button>
+                <button:TextButton text="Login" ui:field="loginButton"/>
+            </gxt:button>
+        </gxt:FramedPanel>
+    </container:CenterLayoutContainer>
+</ui:UiBinder> 
